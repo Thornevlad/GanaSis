@@ -67,8 +67,8 @@ if(!$conexion){
                 $GanFecha_venta = $controlador->limpiarDatos($GanFecha_venta);
                 $GanPrecio_venta = $controlador->limpiarDatos($GanPrecio_venta);
 
-                $resultado = $controlador->agregarNuevoGanado('',$GanCod_sede,$GanSed_ganado,$GanCod_usuario,$GanNombre,$GanColor,
-                $GanRaza,$GanClasificacion,$GanGenero,$GanPeso,$GanPais_origen,$GanNovedad,$GanTraslado,
+                $resultado = $controlador->agregarNuevoGanado('',$GanCod_sede,$GanSed_ganado,$GanCod_usuario,
+                $GanNombre,$GanColor, $GanRaza,$GanClasificacion,$GanGenero,$GanPeso,$GanPais_origen,$GanNovedad,$GanTraslado,
                 $GanVacuna,$GanEnfermedad,$GanTratamiento,$GanDias_trata,$GanPrecio_comp,$GanPrenez,
                 $GanDias_pren,$GanFecha_compra,$GanFecha_venta,$GanPrecio_venta,'');
                 if($resultado == true){

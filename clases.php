@@ -1647,8 +1647,8 @@ class Gestor_Ganado
         $consulta->execute(array(':GanCod_sede' => $GanCod_sede, ':GanSed_ganado' => $GanSed_ganado, ':GanCod_usuario' => $GanCod_usuario, ':GanNombre' => $GanNombre, ':GanColor' => $GanColor, ':GanRaza' => $GanRaza, ':GanClasificacion' => $GanClasificacion, ':GanGenero' => $GanGenero, ':GanPeso' => $GanPeso, ':GanPais_origen' => $GanPais_origen, ':GanNovedad' => $GanNovedad, ':GanTraslado' => $GanTraslado, ':GanVacuna' => $GanVacuna, ':GanEnfermedad' => $GanEnfermedad, ':GanTratamiento' => $GanTratamiento, ':GanDias_trata' => $GanDias_trata, ':GanPrecio_comp' => $GanPrecio_comp, ':GanPrenez' => $GanPrenez, ':GanDias_pren' => $GanDias_pren, ':GanFecha_compra' => $GanFecha_compra, ':GanFecha_venta' => $GanFecha_venta, ':GanPrecio_venta' => $GanPrecio_venta,));
         $resultado = $consulta->rowCount();
         $id = $Conexion->lastInsertId();
-        //$resultado = $consulta->errorInfo();
-        //var_dump($resultado);
+        $resultado = $consulta->errorInfo();
+        var_dump($resultado);
         return ($resultado) ? true : false;
     }
 
