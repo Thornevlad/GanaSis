@@ -1440,7 +1440,7 @@ class Ganado
 {
     private $GanCod_ganado;
     private $GanCod_sede;
-    //private $GanSed_ganado;
+    private $GanSed_ganado;
     private $GanCod_usuario;
     private $GanNombre;
     private $GanColor;
@@ -1467,7 +1467,7 @@ class Ganado
     public function Ganado(
         $GanCod_ganado,
         $GanCod_sede,
-        //$GanSed_ganado, <nombre de la sede>
+        $GanSed_ganado,
         $GanCod_usuario,
         $GanNombre,
         $GanColor,
@@ -1492,7 +1492,7 @@ class Ganado
     ) {
         $this->GanCod_ganado = $GanCod_ganado;
         $this->GanCod_sede = $GanCod_sede;
-        //$this->GanSed_ganado = $GanSed_ganado;
+        $this->GanSed_ganado = $GanSed_ganado;
         $this->GanCod_usuario = $GanCod_usuario;
         $this->GanNombre = $GanNombre;
         $this->GanColor = $GanColor;
@@ -1524,10 +1524,10 @@ class Ganado
     {
         return $this->GanCod_sede;
     }
-    /*public function getGanSed_ganado()
+    public function getGanSed_ganado()
     {
         return $this->GanSed_ganado;
-    }*/
+    }
     public function getGanCod_usuario()
     {
         return $this->GanCod_usuario;
@@ -1621,7 +1621,7 @@ class Gestor_Ganado
     {
         $Conexion = new Conexion();
         $GanCod_sede = $ganado->getGanCod_sede();
-        //$GanSed_ganado = $ganado->getGanSed_ganado();
+        $GanSed_ganado = $ganado->getGanSed_ganado();
         $GanCod_usuario = $ganado->getGanCod_usuario();
         $GanNombre = $ganado->getGanNombre();
         $GanColor = $ganado->getGanColor();
@@ -1642,20 +1642,9 @@ class Gestor_Ganado
         $GanFecha_compra = $ganado->getGanFecha_compra();
         $GanFecha_venta = $ganado->getGanFecha_venta();
         $GanPrecio_venta = $ganado->getGanPrecio_venta();
-        $sql = 'CALL nuevo_ganado(:GanCod_sede, :GanCod_usuario, :GanNombre, 
-        :GanColor, :GanRaza, :GanClasificacion, :GanGenero, :GanPeso, :GanPais_origen, :GanNovedad,
-        :GanTraslado, :GanVacuna, :GanEnfermedad, :GanTratamiento, :GanDias_trata, :GanPrecio_comp,
-        :GanPrenez, :GanDias_pren, :GanFecha_compra, :GanFecha_venta, :GanPrecio_venta)';
+        $sql = 'CALL nuevo_ganado(:GanCod_sede, :GanSed_ganado, :GanCod_usuario, :GanNombre, :GanColor, :GanRaza, :GanClasificacion, :GanGenero, :GanPeso, :GanPais_origen, :GanNovedad, :GanTraslado, :GanVacuna, :GanEnfermedad, :GanTratamiento, :GanDias_trata, :GanPrecio_comp, :GanPrenez, :GanDias_pren, :GanFecha_compra, :GanFecha_venta, :GanPrecio_venta)';
         $consulta = $Conexion->prepare($sql);
-        $consulta->execute(array(':GanCod_sede' => $GanCod_sede, 
-        ':GanCod_usuario' => $GanCod_usuario, ':GanNombre' => $GanNombre, ':GanColor' => $GanColor, 
-        ':GanRaza' => $GanRaza, ':GanClasificacion' => $GanClasificacion, ':GanGenero' => $GanGenero, 
-        ':GanPeso' => $GanPeso, ':GanPais_origen' => $GanPais_origen, ':GanNovedad' => $GanNovedad, 
-        ':GanTraslado' => $GanTraslado, ':GanVacuna' => $GanVacuna, ':GanEnfermedad' => $GanEnfermedad, 
-        ':GanTratamiento' => $GanTratamiento, ':GanDias_trata' => $GanDias_trata, 
-        ':GanPrecio_comp' => $GanPrecio_comp, ':GanPrenez' => $GanPrenez, ':GanDias_pren' => $GanDias_pren, 
-        ':GanFecha_compra' => $GanFecha_compra, ':GanFecha_venta' => $GanFecha_venta, 
-        ':GanPrecio_venta' => $GanPrecio_venta,));
+        $consulta->execute(array(':GanCod_sede' => $GanCod_sede, ':GanSed_ganado' => $GanSed_ganado, ':GanCod_usuario' => $GanCod_usuario, ':GanNombre' => $GanNombre, ':GanColor' => $GanColor, ':GanRaza' => $GanRaza, ':GanClasificacion' => $GanClasificacion, ':GanGenero' => $GanGenero, ':GanPeso' => $GanPeso, ':GanPais_origen' => $GanPais_origen, ':GanNovedad' => $GanNovedad, ':GanTraslado' => $GanTraslado, ':GanVacuna' => $GanVacuna, ':GanEnfermedad' => $GanEnfermedad, ':GanTratamiento' => $GanTratamiento, ':GanDias_trata' => $GanDias_trata, ':GanPrecio_comp' => $GanPrecio_comp, ':GanPrenez' => $GanPrenez, ':GanDias_pren' => $GanDias_pren, ':GanFecha_compra' => $GanFecha_compra, ':GanFecha_venta' => $GanFecha_venta, ':GanPrecio_venta' => $GanPrecio_venta,));
         $resultado = $consulta->rowCount();
         $id = $Conexion->lastInsertId();
         $resultado = $consulta->errorInfo();
@@ -3003,7 +2992,7 @@ class controlador
     public function agregarnuevoganado(
         $GanCod_ganado,
         $GanCod_sede,
-        //$GanSed_ganado,
+        $GanSed_ganado,
         $GanCod_usuario,
         $GanNombre,
         $GanColor,
@@ -3029,7 +3018,7 @@ class controlador
         $ganado = new Ganado(
             $GanCod_ganado,
             $GanCod_sede,
-            //$GanSed_ganado,
+            $GanSed_ganado,
             $GanCod_usuario,
             $GanNombre,
             $GanColor,
@@ -3074,7 +3063,7 @@ class controlador
     public function Modificarganado(
         $GanCod_ganado,
         $GanCod_sede,
-        //$GanSed_ganado,
+        $GanSed_ganado,
         $GanCod_usuario,
         $GanNombre,
         $GanColor,
@@ -3100,7 +3089,7 @@ class controlador
         $ganado = new Ganado(
             $GanCod_ganado,
             $GanCod_sede,
-            //$GanSed_ganado,
+            $GanSed_ganado,
             $GanCod_usuario,
             $GanNombre,
             $GanColor,
