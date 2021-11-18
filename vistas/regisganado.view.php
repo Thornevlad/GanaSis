@@ -182,7 +182,6 @@
                             $contador += 1;
                             $GaCodg = $regisgan['GanCod_ganado'];
                             $GaCsed = $regisgan['GanCod_sede'];
-                            $GaNsed = $regisgan['GanSed_ganado'];
                             $GaCusu = $regisgan['GanCod_usuario'];
                             $GaNomb = $regisgan['GanNombre'];
                             $GaColo = $regisgan['GanColor'];
@@ -207,7 +206,6 @@
                             ?>
                             <tr>
                               <th scope="row"><?php echo $contador; ?></th>
-                              <td><?php echo $GaNsed; ?></td>
                               <td><?php echo $GaNomb; ?></td>
                               <td><?php echo $GaColo; ?></td>
                               <td><?php echo $GaRaza; ?></td>

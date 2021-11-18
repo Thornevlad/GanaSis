@@ -20,7 +20,7 @@ if(!$conexion){
         switch($_POST['submit']){
             case 'agregar':
                 $GanCod_sede = $GanCod_sede1;
-                $GanSed_ganado = $GanSed_ganado1;
+                //$GanSed_ganado = $GanSed_ganado1;
                 $GanCod_usuario = $GanCod_usuario1;
                 $GanNombre = $_POST['GanNombre'];
                 $GanColor = $_POST['GanColor'];
@@ -45,7 +45,7 @@ if(!$conexion){
 
 
                 $GanCod_sede = $controlador->limpiarDatos($GanCod_sede);
-                $GanSed_ganado = $controlador->limpiarDatos($GanSed_ganado);
+                //$GanSed_ganado = $controlador->limpiarDatos($GanSed_ganado);
                 $GanCod_usuario = $controlador->limpiarDatos($GanCod_usuario);
                 $GanNombre = $controlador->limpiarDatos($GanNombre);
                 $GanColor = $controlador->limpiarDatos($GanColor);
@@ -67,7 +67,7 @@ if(!$conexion){
                 $GanFecha_venta = $controlador->limpiarDatos($GanFecha_venta);
                 $GanPrecio_venta = $controlador->limpiarDatos($GanPrecio_venta);
 
-                $resultado = $controlador->agregarNuevoGanado('',$GanCod_sede,$GanSed_ganado,$GanCod_usuario,
+                $resultado = $controlador->agregarNuevoGanado('',$GanCod_sede,/*$GanSed_ganado*/,$GanCod_usuario,
                 $GanNombre,$GanColor, $GanRaza,$GanClasificacion,$GanGenero,$GanPeso,$GanPais_origen,$GanNovedad,$GanTraslado,
                 $GanVacuna,$GanEnfermedad,$GanTratamiento,$GanDias_trata,$GanPrecio_comp,$GanPrenez,
                 $GanDias_pren,$GanFecha_compra,$GanFecha_venta,$GanPrecio_venta,'');
