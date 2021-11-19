@@ -70,9 +70,6 @@
                             <option>NO</option>
                       </select>
                       </div>
-                      <div class="col-lg-1 p-2">
-                      <a href="#" class="text-decoration-none">Detalles</a>
-                      </div>
                       <div class="col-lg-2 p-2">
                       <select class="form-control form-control-sm" name="GanTraslado">
                             <option>¿Traslado?</option>
@@ -80,18 +77,12 @@
                             <option>NO</option>
                       </select>
                       </div>
-                      <div class="col-lg-1 p-2">
-                      <a href="#" class="text-decoration-none">Detalles</a>
-                      </div>
                       <div class="col-lg-2 p-2">
                       <select class="form-control form-control-sm" name="GanTratamiento">
                             <option>¿Tratamiento?</option>
                             <option>SI</option>
                             <option>NO</option>
                       </select>
-                      </div>
-                      <div class="col-lg-1 p-2">
-                      <a href="#" class="text-decoration-none">Detalles</a>
                       </div>
                       <div class="col-lg-3 p-2">
                       <input type="text" name= "GanDias_trata" class="form-control" placeholder="Días de Tratamiento">
@@ -103,9 +94,6 @@
                             <option>NO</option>
                       </select>
                       </div>
-                      <div class="col-lg-1 p-2">
-                      <a href="#" class="text-decoration-none">Detalles</a>
-                      </div>
                       <div class="col-lg-3 p-2">
                       <input type="text" name= "GanDias_pren" class="form-control" placeholder="Días Preñez">
                       </div>
@@ -116,18 +104,12 @@
                             <option>NO</option>
                       </select>
                       </div>
-                      <div class="col-lg-1 p-2">
-                      <a href="#" class="text-decoration-none">Detalles</a>
-                      </div>
                       <div class="col-lg-2 p-2">
                       <select class="form-control form-control-sm" name="GanEnfermedad">
                             <option>¿Enfermedad?</option>
                             <option>SI</option>
                             <option>NO</option>
                       </select>
-                      </div>
-                      <div class="col-lg-1 p-2">
-                      <a href="#" class="text-decoration-none">Detalles</a>
                       </div>
                       <div class="col-lg-3 p-2">
                       <input type="text" name= "GanPrecio_comp" class="form-control" placeholder="Precio de Compra">
