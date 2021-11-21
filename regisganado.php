@@ -54,8 +54,8 @@ if(!$conexion){
                 $GanGenero = $controlador->limpiarDatos($GanGenero);
                 $GanPeso = $controlador->limpiarDatos($GanPeso);
                 $GanPais_origen = $controlador->limpiarDatos($GanPais_origen);
-                $GanNovedad = $controlador->limpiarDatos($GanNovedad);
                 $GanTraslado = $controlador->limpiarDatos($GanTraslado);
+                $GanNovedad = $controlador->limpiarDatos($GanNovedad);
                 $GanVacuna = $controlador->limpiarDatos($GanVacuna);
                 $GanEnfermedad = $controlador->limpiarDatos($GanEnfermedad);
                 $GanTratamiento = $controlador->limpiarDatos($GanTratamiento);
